@@ -1,11 +1,6 @@
 import { gql } from "apollo-server";
 
 export const typeDefs = gql`
-  input AddAuthorInput {
-    name: String!
-    twitter: String
-  }
-
   type Author {
     name: String!
     twitter: String
@@ -17,15 +12,20 @@ export const typeDefs = gql`
     author: String!
   }
 
-  input ChangeBookInput {
-    id: Int!
-    title: String!
-  }
-
   type Chat {
     id: Int!
     message: String!
     author: String!
+  }
+
+  input AddAuthorInput {
+    name: String!
+    twitter: String
+  }
+
+  input ChangeBookInput {
+    id: Int!
+    title: String!
   }
 
   input SendMessageInput {
