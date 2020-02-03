@@ -1,13 +1,15 @@
 import React from 'react';
-import './App.css';
-import {Book} from './Book'
+import apolloClient from './apolloSetup';
+import { ApolloProvider } from '@apollo/react-hooks';
 
-function App() {
-  return (
-    <div className="App">
-      <Book></Book>
-    </div>
-  );
-}
+import Chats from './pages/Chats';
+
+const App = () => (
+  <ApolloProvider client={apolloClient}>
+    <React.Fragment>
+      <Chats />
+    </React.Fragment>
+  </ApolloProvider>
+);
 
 export default App;
