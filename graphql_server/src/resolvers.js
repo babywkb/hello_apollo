@@ -64,10 +64,9 @@ export const resolvers = {
       };
     },
     sendMessage: async (_, { input: { message, author } } ) => {
-      console.log('here')
       const chat = { id: chats.length + 1, message: message, author: author };
       chats.push(chat);
-      pubsub.publish(CHAT_CHANNEL, { chatsChanged: {chats} });
+      pubsub.publish("CHAT_CHANNEL", { messageSent: chat });
       return chat;
     }
   },
@@ -77,8 +76,11 @@ export const resolvers = {
       subscribe: () => pubsub.asyncIterator(["bookTitleChanged"])
     },
 
-    chatsChanged: {
-      subscribe: () => pubsub.asyncIterator(CHAT_CHANNEL)
+    messageSent: {
+      subscribe: () => {
+        console.log('okok');
+        return pubsub.asyncIterator(CHAT_CHANNEL)
+      }
     }
   }
 };

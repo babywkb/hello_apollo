@@ -1,10 +1,10 @@
 import React from "react";
 import useChatsQuery from "./useChatsQuery";
 import SendMessage from "./SendMessage";
-import useChatsChanged from "./useChatsChanged";
+import useMessageSent from "./useMessageSent";
 
 const Chats = () => {
-  useChatsChanged();
+  useMessageSent();
   let { data } = useChatsQuery();
 
   if (!data || !data.chats) return null;
