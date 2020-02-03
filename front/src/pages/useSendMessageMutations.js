@@ -10,7 +10,7 @@ export const mutation = gql`
   }
 `;
 
-export default ({ message, author }) => {
+export default () => {
   let [sendMessage] = useMutation(mutation);
   return ({ message, author }) => {
     sendMessage({
