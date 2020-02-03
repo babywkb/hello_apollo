@@ -6,7 +6,7 @@
 ```
 cd ./graphql_server_mock
 npm install
-node index.js
+node start
 ```
 
 フロント動かす
