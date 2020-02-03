@@ -54,25 +54,18 @@ export const resolvers = {
     deleteBook: (_, { title }) => true,
     changeBookTitle: async (_, { input }) => {
       let { id, title } = input;
-
-      //simulate a big delay in processing
-      //await new Promise(resolve => setTimeout(resolve, 3000))
-
       let book = books.find(book => book.id === id);
-
       pubsub.publish("bookTitleChanged", {
         bookTitleChanged: { ...book, title }
       });
-
-      //Return the new book title
       return {
         ...book,
         title: title + " test"
       };
     },
-    sendMessage(_, { author, message }, { pubsub }) {
-      const chat = { id: chats.length + 1, message, author };
-
+    sendMessage: async (_, { input: { message, author } } ) => {
+      console.log('here')
+      const chat = { id: chats.length + 1, message: message, author: author };
       chats.push(chat);
       pubsub.publish("CHAT_CHANNEL", { messageSent: chat });
       return chat;

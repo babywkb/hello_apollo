@@ -12,7 +12,7 @@ const SendMessage = ({ author }) => {
   return (
     <div>
       <input value={message} onChange={e => setMessage(e.target.value)} />
-      <button onClick={() => sendMessage({ message, author: author })}>
+      <button onClick={() => sendMessage({ message: message, author: author })}>
         Boom!
       </button>
     </div>

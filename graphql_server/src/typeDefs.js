@@ -45,7 +45,7 @@ export const typeDefs = gql`
     changeBookTitle(input: ChangeBookInput!): Book
     addAuthor(input: AddAuthorInput!): Author
     deleteBook(author: String!): Boolean
-    sendMessage(input: SendMessageInput!): Chat
+    sendMessage(input: SendMessageInput): Chat
     deleteMessage(author: String!): Boolean
   }
 

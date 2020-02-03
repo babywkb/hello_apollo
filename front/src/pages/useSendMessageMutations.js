@@ -16,9 +16,11 @@ export default () => {
     sendMessage({
       variables: { input: { message, author } },
       optimisticResponse: {
-        __typename: 'Chat',
-        message,
-        author,
+        sendMessage: {
+          __typename: 'Chat',
+          message,
+          author,
+        },
       },
     });
   };

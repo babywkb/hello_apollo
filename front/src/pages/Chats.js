@@ -25,7 +25,7 @@ const Chats = () => {
   return (
     <div>
       <span>{chats}</span>
-      <SendMessage></SendMessage>
+      <SendMessage author='user001'></SendMessage>
     </div>
   );
 };
