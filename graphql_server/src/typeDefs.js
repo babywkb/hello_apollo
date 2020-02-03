@@ -18,6 +18,10 @@ export const typeDefs = gql`
     author: String!
   }
 
+  type ChatRoom {
+    chats: [Chat]
+  }
+
   input AddAuthorInput {
     name: String!
     twitter: String
@@ -51,6 +55,6 @@ export const typeDefs = gql`
 
   type Subscription {
     bookTitleChanged: Book
-    messageSent: Chat
+    chatsChanged: Chat
   }
 `;

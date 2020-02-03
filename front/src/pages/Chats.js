@@ -2,11 +2,11 @@ import React from "react";
 import useChatsQuery from "./useChatsQuery";
 // import useDeleteBookMutation from "./useDeleteBookMutation";
 import SendMessage from "./SendMessage";
-// import useBookTitleChanged from "./useBookTitleChanged";
+import useChatsChanged from "./useChatsChanged";
 
 const Chats = () => {
-  //   useBookTitleChanged();
-    let { data } = useChatsQuery();
+  useChatsChanged();
+  let { data } = useChatsQuery();
   //   let deleteBook = useDeleteBookMutation();
 
   if (!data || !data.chats) return null;

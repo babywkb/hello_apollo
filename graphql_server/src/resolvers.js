@@ -67,7 +67,7 @@ export const resolvers = {
       console.log('here')
       const chat = { id: chats.length + 1, message: message, author: author };
       chats.push(chat);
-      pubsub.publish("CHAT_CHANNEL", { messageSent: chat });
+      pubsub.publish(CHAT_CHANNEL, { chatsChanged: {chats} });
       return chat;
     }
   },
@@ -77,7 +77,7 @@ export const resolvers = {
       subscribe: () => pubsub.asyncIterator(["bookTitleChanged"])
     },
 
-    messageSent: {
+    chatsChanged: {
       subscribe: () => pubsub.asyncIterator(CHAT_CHANNEL)
     }
   }
