@@ -21,7 +21,7 @@ const chats = [
   },
   {
     id: 2,
-    title: "World",
+    message: "World",
     author: "Neill Blomkamp"
   }
 ];
