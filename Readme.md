@@ -1,4 +1,4 @@
-# apolloこんにちは
+# hello apollo
 
 ## How to Run
 
@@ -15,3 +15,6 @@ cd ./front
 npm install
 npm start
 ```
+
+👀
+https://ultimatecourses.com/blog/graphql-subscriptions-with-apollo-server-and-client
